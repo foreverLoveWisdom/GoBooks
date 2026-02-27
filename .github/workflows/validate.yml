@@ -18,4 +18,4 @@ jobs:
           go-version: "1.21"
 
       - name: Run validator
-        run: make validate
+        run: make -C gobooks validate

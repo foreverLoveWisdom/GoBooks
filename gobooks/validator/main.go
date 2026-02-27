@@ -4,7 +4,7 @@
 // book metadata (*Last published*, *Authors*), cover images exist, covers linked.
 //
 // Usage: go run . [path/to/README.md]
-//        go run .              # uses README.md in parent dir (../README.md)
+//        go run .              # uses README.md at repo root (../../README.md)
 package main
 
 import (
@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	readmePath := filepath.Join("..", "README.md")
+	readmePath := filepath.Join("..", "..", "README.md")
 	if len(os.Args) > 1 {
 		readmePath = os.Args[1]
 	}
@@ -236,14 +236,14 @@ func extractBookBlocks(lines []string) map[string]string {
 
 func extractCoverRefs(lines []string) []string {
 	var refs []string
-	r := regexp.MustCompile(`src="(covers/[^"]+)"`)
+	r := regexp.MustCompile(`src="(gobooks/covers/[^"]+)"`)
 	for _, line := range lines {
 		if match := r.FindStringSubmatch(line); match != nil {
 			refs = append(refs, match[1])
 		}
 	}
-	// Also check cover/ path
-	r2 := regexp.MustCompile(`src="(cover/[^"]+)"`)
+	// Also check gobooks/cover/ path (typo)
+	r2 := regexp.MustCompile(`src="(gobooks/cover/[^"]+)"`)
 	for _, line := range lines {
 		if match := r2.FindStringSubmatch(line); match != nil {
 			refs = append(refs, match[1])
@@ -254,7 +254,7 @@ func extractCoverRefs(lines []string) []string {
 
 func findUnlinkedCovers(lines []string) []string {
 	var unlinked []string
-	r := regexp.MustCompile(`<img\s+src="(covers/[^"]+)"`)
+	r := regexp.MustCompile(`<img\s+src="(gobooks/covers/[^"]+)"`)
 	for _, line := range lines {
 		// Skip if img is inside <a href> or markdown link [<img...>](url)
 		if (strings.Contains(line, "<a href=") || strings.Contains(line, "](http")) && strings.Contains(line, "<img") {
