@@ -5,6 +5,7 @@
 
 GoBooks is a curated collection of the best Go books for developers at every level—from beginners to engineers working on concurrency, performance, and system design. One place to find the right learning resource.
 
+**Other languages:** [Español](gobooks/README-es.md) · [中文](gobooks/README-zh.md) · [Português](gobooks/README-pt.md) · [Русский](gobooks/README-ru.md) · [Deutsch](gobooks/README-de.md) · [فارسی](gobooks/README-fa.md)
 
 - [Most Popular Golang Books](#most-popular-go-books)
 - [Starter Books](#starter-books)
@@ -224,21 +225,6 @@ What you will learn
 <a href="https://go101.org/article/101.html"><img src="gobooks/covers/go-101.jpg" width="120px"/></a>
 
 Go 101 is a book focusing on Go syntax/semantics and all kinds of runtime related things (Go 1.17-pre ready) and tries to help gophers gain a deep and thorough understanding of Go. This book also collects many details of Go and in Go programming. It is expected that this book is helpful for both beginner and experienced Go programmers.
-
------
-
-### [Go Programming Language](https://book.gofarsi.ir/)
-
-*Last published*: **2023**
-*Authors:* **Tapir Liu**
-*Avaible For Free* : **[Read Online](https://book.gofarsi.ir)**
-*Language*: **Persian**
-
-<a href="https://book.gofarsi.ir/"><img src="gobooks/covers/gofarsi-book-cover.jpg" width="120px"/></a>
-
-The first Persian open source book about golang deep dive.
-In this book, we discuss all deep topics related to the Go language,
-from the basics to the advanced, with the aim of increasing the Gopher community in Iran.
 
 -----
 
